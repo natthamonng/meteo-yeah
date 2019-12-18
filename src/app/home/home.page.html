@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Météo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="data != null">
+    <ion-img [src]="data.current_condition.icon_big"></ion-img>
+
+    <p>{{ data.current_condition.tmp }}</p>
+    <p>{{ data.current_condition.condition }}</p>
+    <ion-title>{{ data.city_info.name }}</ion-title>
+  </div>
+  
+</ion-content>
+
+<app-forecast-list></app-forecast-list>

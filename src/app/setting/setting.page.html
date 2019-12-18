@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choisir une ville</ion-title>
+    <ion-button size="small" color="light">
+      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<!-- Searchbar with a cancel button and custom cancel button text -->
+<ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel" debounce="500" (ionChange)="doSearch($event)"
+  placeholder="Rechercher"></ion-searchbar>
+
+<ion-content>
+  <!-- List of Text Items -->
+  <ion-list>
+    <ion-item *ngFor="let city of cities">
+      <ion-label>{{ city.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
