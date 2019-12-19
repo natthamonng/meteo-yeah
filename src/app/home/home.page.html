@@ -1,20 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Météo
-    </ion-title>
+      <ion-title class="title-big">McDoughnut's Météo</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <a [routerLink]="['/setting']"><ion-icon slot="icon-only" name="more"></ion-icon></a>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
   <div *ngIf="data != null">
-    <ion-img [src]="data.current_condition.icon_big"></ion-img>
+    <ion-grid class="main">
+      <ion-row>
+        <ion-col size="12">
+          <ion-img [src]="data.current_condition.icon_big" class="today-weather-icon"></ion-img>
+        </ion-col>
+        <ion-col size="12" class="ion-text-center">
+          <p class="today-temp">{{ data.current_condition.tmp }}°c</p>
+          <p class="today-condition">{{ data.current_condition.condition }}</p>
+        </ion-col>
+      </ion-row>
 
-    <p>{{ data.current_condition.tmp }}</p>
-    <p>{{ data.current_condition.condition }}</p>
-    <ion-title>{{ data.city_info.name }}</ion-title>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <ion-title class="location">{{ data.city_info.name }}, {{ data.city_info.country }}</ion-title>
+          <p>{{ data.fcst_day_0.day_long }} {{ data.fcst_day_0.date }}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <app-forecast-list [data]="data"></app-forecast-list>
   </div>
   
 </ion-content>
 
-<app-forecast-list></app-forecast-list>
+<app-footer></app-footer>

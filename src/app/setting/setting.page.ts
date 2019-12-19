@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FetchWeatherService } from '../fetch-weather.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-setting',
@@ -14,10 +15,13 @@ export class SettingPage {
   // Filtered cities for display
   public cities: Array<Object> = [];
 
+  public bDidSearch: boolean = false;
+
   constructor(
-    private fetchSvc: FetchWeatherService
+    private fetchCitiesSvc: FetchWeatherService,
+    private router: Router
   ) { 
-    this.fetchSvc.searchCitiesPromise()
+    this.fetchCitiesSvc.searchCitiesPromise()
       .then(data => {
         this.allCities = data;
     });
@@ -28,7 +32,14 @@ export class SettingPage {
   }
 
   doSearch(searchEvent: CustomEvent){
+    this.bDidSearch = true;
+
     const searchTerm: string = this.getSearchTerm(searchEvent);
+    if (searchTerm.length < 3) {
+      this.cities = [];
+      return;
+    } 
+
     // Filter allCities wrt searchTerm and store results in cities
     this.cities = this.allCities.filter((city: any) => {
       return (city.name.toLowerCase().startsWith(searchTerm.toLowerCase()) == true)
@@ -37,5 +48,18 @@ export class SettingPage {
     console.log(this.cities);
   }
   
+  getDisplayMessage(){
+    if (this.bDidSearch == true) {
+      return "Aucun résultat ne correspond à votre recherche";
+    } else {
+      return;
+    }
+  }
 
+  getCity(newCity){
+    console.log('Good');
+    this.fetchCitiesSvc.setCurrentCity(newCity.url);
+    this.router.navigateByUrl("/home");
+  }
+  
 }

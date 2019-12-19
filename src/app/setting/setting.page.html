@@ -1,22 +1,25 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <a [routerLink]="['/home']">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </a>
+    </ion-buttons>
     <ion-title>Choisir une ville</ion-title>
-    <ion-button size="small" color="light">
-      <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-    </ion-button>
   </ion-toolbar>
-
-
 </ion-header>
 
-<!-- Searchbar with a cancel button and custom cancel button text -->
-<ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel" debounce="500" (ionChange)="doSearch($event)"
+<!-- Default Searchbar -->
+<ion-searchbar debounce="500" (ionChange)="doSearch($event)"
   placeholder="Rechercher"></ion-searchbar>
 
 <ion-content>
   <!-- List of Text Items -->
   <ion-list>
-    <ion-item *ngFor="let city of cities">
+    <ion-item *ngIf="cities.length == 0 && bDidSearch">
+      {{ getDisplayMessage() }}
+    </ion-item>
+    <ion-item *ngFor="let city of cities" (click)="getCity(city)" class="search-result">
       <ion-label>{{ city.name }}</ion-label>
     </ion-item>
   </ion-list>

@@ -1,1 +1,35 @@
+:host {
+    min-height: 100vh;
+
+    .title-big {
+        font-weight: bold;
+    }
+
+    .main {
+        margin-top: 20px;
+    }
+
+    .today-weather-icon {
+        max-width: 200px;
+        margin: auto;
+    }
+    
+    .today-temp {
+        font-size: 80px;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    .today-condition {
+        font-size: 24px;
+        margin: 0;
+        padding-top: 10px;
+    }
+    
+    .location {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 100px;
+    }
+}
 

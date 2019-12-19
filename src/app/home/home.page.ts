@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FetchWeatherService } from '../fetch-weather.service';
 
 @Component({
@@ -6,13 +6,20 @@ import { FetchWeatherService } from '../fetch-weather.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage {
 
   public data: any;
-
-  constructor() {}
-
-  ngOnInit(){
+  constructor(private fetchWeatherSvc: FetchWeatherService) {
     
   }
+
+  ionViewWillEnter(){
+    const currentCity = this.fetchWeatherSvc.getCurrentCity();
+
+    this.fetchWeatherSvc.searchWeatherPromise(currentCity)
+      .then(data => {
+        this.data = data;
+      });
+  }
+
 }

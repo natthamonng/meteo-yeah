@@ -1,9 +1,11 @@
-<ion-item>
+<ion-list>
+  <ion-item *ngFor="let dayNumber of dayNumbers">
     <ion-avatar slot="start">
-      <img src="data.fcst_day_0.icon">
+      <img [src]="getDayData(dayNumber).icon">
     </ion-avatar>
     <ion-label>
-      <p>{{ data.fcst_day_0.date }}</p>
-      <p>{{ data.fcst_day_0.tmin }} / {{ data.fcst_day_0.tmax }}</p>
+      <p class="date">{{ getDayData(dayNumber).day_long }} {{ getDayData(dayNumber).date }}</p>
+      <p>{{ getDayData(dayNumber).tmin }} °c / {{ getDayData(dayNumber).tmax }} °c</p>
     </ion-label>
-</ion-item>
+  </ion-item>
+</ion-list>

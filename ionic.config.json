@@ -1,5 +1,7 @@
 {
   "name": "MTO-NAT",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { ForecastListComponent } from './forecast-list/forecast-list.component';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ForecastListComponent } from './forecast-list/forecast-list.component';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    FooterModule
   ],
   declarations: [HomePage, ForecastListComponent]
 })

@@ -5,13 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class FetchWeatherService {
 
+  private currentCity: string = "toulon";
+
   constructor() { }
 
-  async searchWeatherPromise(city: string) {
+  public getCurrentCity(){
+    return this.currentCity;
+  }
 
-    city = 'Valette-du-Var';
+  public setCurrentCity(newCity){
+    this.currentCity = newCity;
+  }
 
-    let url = "http://prevision-meteo.ch/services/json/" + city;
+  async searchWeatherPromise(city: string = 'toulon') {
+    let url = "https://www.prevision-meteo.ch/services/json/" + city;
 
     return fetch(url)
     .then(res => res.json())
@@ -38,7 +45,5 @@ export class FetchWeatherService {
       return citiesArray;
     })
   }
-
-
 
 }
