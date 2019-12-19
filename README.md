@@ -1,3 +1,1 @@
-# Weather App made with <3
-
-## Angular, Ionic
+# Weather App with Angular and Ionic
