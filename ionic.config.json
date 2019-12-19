@@ -1,5 +1,5 @@
 {
-  "name": "MTO-NAT",
+  "name": "Weather App",
   "integrations": {
     "cordova": {}
   },
