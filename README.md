@@ -4,6 +4,6 @@ this project is on development and it's not deployed yet. To run the project, ma
 
 So, after cloning or forking the project
 - npm i
-- ionic serve --lab -o
+- ionic serve
 
 Made with <3 by McDoughnut
