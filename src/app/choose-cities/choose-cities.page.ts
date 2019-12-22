@@ -3,11 +3,11 @@ import { FetchWeatherService } from '../fetch-weather.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-setting',
-  templateUrl: './setting.page.html',
-  styleUrls: ['./setting.page.scss'],
+  selector: 'app-choose-cities',
+  templateUrl: './choose-cities.page.html',
+  styleUrls: ['./choose-cities.page.scss'],
 })
-export class SettingPage {
+export class ChooseCitiesPage {
 
   // List of all available cities
   public allCities: Array<Object> = [];

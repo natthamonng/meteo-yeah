@@ -5,8 +5,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
-    path: 'setting',
-    loadChildren: () => import('./setting/setting.module').then( m => m.SettingPageModule)
+    path: 'choose-cities',
+    loadChildren: () => import('./choose-cities/choose-cities.module').then( m => m.ChooseCitiesPageModule)
   },
 ];
 

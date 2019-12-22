@@ -1,5 +1,9 @@
 <ion-list>
-    <ion-item button>Choisir une ville</ion-item>
-    <!-- <ion-item button>About</ion-item> -->
+    <ion-list-header>Paramètres</ion-list-header>
+    <ion-item [routerLink]="['/choose-cities']" (click)="closePopover()" class="choice">
+        <ion-label >Choisir une ville</ion-label>
+    </ion-item>
+    <ion-item (click)="closePopover()" class="choice">
+        <ion-label>Fermer</ion-label>
+    </ion-item>
 </ion-list>
-<ion-button expand="block" onClick="dismissPopover()">Close</ion-button>

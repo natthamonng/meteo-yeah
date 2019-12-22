@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { ForecastListComponent } from './forecast-list/forecast-list.component';
+import { PopoverSettingsComponent } from '../popover-settings/popover-settings.component';
 import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterModule } from '../footer/footer.module';
     ]),
     FooterModule
   ],
-  declarations: [HomePage, ForecastListComponent]
+  entryComponents: [PopoverSettingsComponent],
+  declarations: [HomePage, ForecastListComponent, PopoverSettingsComponent]
 })
 export class HomePageModule {}

@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="title-big">Météo</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button>
-        <a [routerLink]="['/setting']">
-          <ion-icon slot="icon-only" name="more"></ion-icon>
-        </a>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon slot="icon-only" name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -43,9 +41,8 @@
       </ion-row>
     </ion-grid>
 
-
   </div>
 
 </ion-content>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

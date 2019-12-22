@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SettingPageRoutingModule } from './setting-routing.module';
+import { ChooseCitiesPageRoutingModule } from './choose-cities-routing.module';
 
-import { SettingPage } from './setting.page';
+import { ChooseCitiesPage } from './choose-cities.page';
 import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { FooterModule } from '../footer/footer.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SettingPageRoutingModule,
+    ChooseCitiesPageRoutingModule,
     FooterModule
   ],
-  declarations: [SettingPage]
+  declarations: [ChooseCitiesPage]
 })
-export class SettingPageModule {}
+export class ChooseCitiesPageModule {}
