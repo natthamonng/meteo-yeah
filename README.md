@@ -6,4 +6,4 @@ So, after cloning or forking the project
 - npm i
 - ionic serve
 
-Made with <3 by McDoughnut
+
