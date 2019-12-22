@@ -1,4 +1,5 @@
-<ion-list>
+<ion-list class="list-border">
+  <!-- <ion-title class="ion-padding-bottom">Les jours à venir</ion-title> -->
   <ion-item *ngFor="let dayNumber of dayNumbers">
     <ion-avatar slot="start">
       <img [src]="getDayData(dayNumber).icon">

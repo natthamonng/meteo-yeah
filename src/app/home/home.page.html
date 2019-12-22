@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="title-big">Météo</ion-title>
+    <ion-title class="title-big">Météo-Yeah!</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="presentPopover($event)">
         <ion-icon slot="icon-only" name="more"></ion-icon>
@@ -12,16 +12,17 @@
 <ion-content>
 
   <div *ngIf="data != null">
-    <ion-grid>
+    <ion-grid class="main">
       <ion-row>
-        <ion-col size-md="7">
-          <ion-grid>
-            <ion-row class="main">
+        <ion-col size-xl="7">
+          
+            <ion-row>
               <ion-col size="12">
                 <ion-img [src]="data.current_condition.icon_big" class="today-weather-icon"></ion-img>
               </ion-col>
               <ion-col size="12" class="ion-text-center">
                 <p class="today-temp">{{ data.current_condition.tmp }}°c</p>
+                <p class="today-minmax">{{ data.fcst_day_0.tmin }}°c / {{ data.fcst_day_0.tmax }}°c</p>
                 <p class="today-condition">{{ data.current_condition.condition }}</p>
               </ion-col>
             </ion-row>
@@ -32,10 +33,11 @@
                 <p>{{ data.fcst_day_0.day_long }} {{ data.fcst_day_0.date }}</p>
               </ion-col>
             </ion-row>
-          </ion-grid>
+          
         </ion-col>
 
-        <ion-col size-md="5" class="ion-align-self-center">
+        <ion-col size-xl="5" class="ion-align-self-center">
+          <!-- <ion-title class="ion-padding-bottom">Les jours à venir</ion-title> -->
           <app-forecast-list [data]="data"></app-forecast-list>
         </ion-col>
       </ion-row>
