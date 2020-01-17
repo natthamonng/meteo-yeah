@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { IWeatherData, IForecastDayData } from './WeatherData';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class FetchWeatherService {
     this.currentCity = newCity;
   }
 
-  async searchWeatherPromise(city: string = 'toulon') {
+  async searchWeatherPromise(city: string = 'toulon'): Promise<IWeatherData> {
     let url = "https://www.prevision-meteo.ch/services/json/" + city;
 
     return fetch(url)
@@ -26,6 +27,7 @@ export class FetchWeatherService {
       //Table of results
       return data;
     })
+    .catch(err => console.error(err))
   }
 
   async searchCitiesPromise() {
@@ -39,6 +41,7 @@ export class FetchWeatherService {
       const citiesArray = new Array();
 
       Object.keys(data).forEach(key => {
+        debugger
         citiesArray.push(data[key]);
       });
 

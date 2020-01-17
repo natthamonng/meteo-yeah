@@ -40,11 +40,10 @@ export class ChooseCitiesPage {
       return;
     } 
 
-    // Filter allCities wrt searchTerm and store results in cities
+    // Filter allCities with searchTerm and store results in cities
     this.cities = this.allCities.filter((city: any) => {
       return (city.name.toLowerCase().startsWith(searchTerm.toLowerCase()) == true)
     });
-
     console.log(this.cities);
   }
   
@@ -57,7 +56,7 @@ export class ChooseCitiesPage {
   }
 
   getCity(newCity){
-    console.log('Good');
+    console.log(newCity);
     this.fetchCitiesSvc.setCurrentCity(newCity.url);
     this.router.navigateByUrl("/home");
   }

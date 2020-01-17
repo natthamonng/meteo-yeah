@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IWeatherData, IForecastDayData } from '../../WeatherData';
 
 @Component({
   selector: 'app-forecast-list',
@@ -10,7 +11,7 @@ export class ForecastListComponent implements OnInit {
   public dayNumbers = [1, 2, 3, 4];
 
   @Input()
-  public data;
+  public data: IWeatherData;
 
   // public _data;
 
@@ -28,8 +29,8 @@ export class ForecastListComponent implements OnInit {
 
   ngOnInit() {}
 
-  public getDayData(dayNumber){
-    return this.data['fcst_day_'+dayNumber];
+  public getDayData(dayNumber: number):IForecastDayData {
+    return this.data[`fcst_day_${dayNumber}`];
   }
 
 }
