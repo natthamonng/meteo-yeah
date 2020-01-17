@@ -34,13 +34,14 @@ export class ChooseCitiesPage {
   doSearch(searchEvent: CustomEvent){
     this.bDidSearch = true;
 
+    //ถ้า searchTerm มีความยาวน้อยกว่า 3 ให้ return fitred cities for display เป็น array เปล่า
     const searchTerm: string = this.getSearchTerm(searchEvent);
     if (searchTerm.length < 3) {
       this.cities = [];
       return;
     } 
 
-    // Filter allCities wrt searchTerm and store results in cities
+    // Filter allCities with searchTerm and store results in cities
     this.cities = this.allCities.filter((city: any) => {
       return (city.name.toLowerCase().startsWith(searchTerm.toLowerCase()) == true)
     });
