@@ -25,7 +25,7 @@ export class ForecastListComponent implements OnInit {
   //   ];
   // };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 
