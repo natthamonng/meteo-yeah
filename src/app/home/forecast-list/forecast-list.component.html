@@ -1,12 +1,15 @@
-<ion-list class="list-border">
-  <!-- <ion-title class="ion-padding-bottom">Les jours à venir</ion-title> -->
-  <ion-item *ngFor="let dayNumber of dayNumbers">
-    <ion-avatar slot="start">
-      <img [src]="getDayData(dayNumber).icon">
-    </ion-avatar>
-    <ion-label>
-      <p class="fcst-list-date">{{ getDayData(dayNumber).day_long }} {{ getDayData(dayNumber).date }}</p>
-      <p>{{ getDayData(dayNumber).tmin }}° / {{ getDayData(dayNumber).tmax }}°</p>
-    </ion-label>
-  </ion-item>
-</ion-list>
+<div class="fcst-list-container">
+  <h3>Tendances jours suivants</h3>
+  <ion-list class="list-border">
+    <!-- <ion-title class="ion-padding-bottom">Les jours à venir</ion-title> -->
+    <ion-item *ngFor="let dayNumber of dayNumbers">
+      <ion-avatar slot="start">
+        <img [src]="getDayData(dayNumber).icon">
+      </ion-avatar>
+      <ion-label>
+        <p class="fcst-list-date">{{ getDayData(dayNumber).day_long }} {{ getDayData(dayNumber).date }}</p>
+        <p>{{ getDayData(dayNumber).tmin }}° / {{ getDayData(dayNumber).tmax }}°</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</div>

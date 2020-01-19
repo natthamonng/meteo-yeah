@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="title-big">METEO</ion-title>
+    <ion-title class="title-big">METEO-YEAH!</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="presentPopover($event)">
         <ion-icon slot="icon-only" name="more"></ion-icon>
@@ -32,10 +32,18 @@
             </ion-col>
           </ion-row>
 
-          <app-hourly-weather [data]="data"></app-hourly-weather>
+          <ion-row>
+            <ion-col size="12">
+              <app-hourly-weather [data]="data"></app-hourly-weather>
+            </ion-col>
+          </ion-row>
       </ion-col>
 
       <ion-col size-md="5" class="ion-align-self-center">
+        <ion-row>
+
+        </ion-row>
+        <app-temperature-chart [data]="data"></app-temperature-chart>
         <app-forecast-list [data]="data"></app-forecast-list>
       </ion-col>
     </ion-row>

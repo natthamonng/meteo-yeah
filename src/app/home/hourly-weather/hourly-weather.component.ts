@@ -58,15 +58,13 @@ export class HourlyWeatherComponent implements OnInit {
       }
     });
 
-    console.log(hoursData);
+    // console.log(hoursData);
     
     return hoursData;
   }
 
   slideOpts = {
-    slidesPerView: 10,
-    freeMode: false,
-    scrollbar: true,
+    slidesPerView: 4.5,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
