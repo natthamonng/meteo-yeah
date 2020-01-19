@@ -16,7 +16,7 @@
 <ion-content>
   <!-- List of Text Items -->
   <ion-list>
-    <ion-item *ngIf="cities.length == 0 && bDidSearch">
+    <ion-item *ngIf="cities.length == 0 && bDidSearch"> 
       {{ getDisplayMessage() }}
     </ion-item>
     <ion-item *ngFor="let city of cities" (click)="getCity(city)" class="choice">

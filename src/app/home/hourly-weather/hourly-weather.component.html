@@ -1,0 +1,13 @@
+<ion-slides [options]="slideOpts">
+  <ion-slide *ngFor="let index of hoursData">
+    <div>
+      <ion-label>
+        <p class="hourly-time">{{ getNext24Hrs()[index].hourKey }}</p>
+      </ion-label>
+    <img [src]="getNext24Hrs()[index].icon"/>
+    <ion-label>
+      <p>{{ getNext24Hrs()[index].temp }}°</p>
+    </ion-label>
+    </div>
+  </ion-slide>
+</ion-slides>

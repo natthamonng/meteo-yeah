@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="title-big">Météo-Yeah!</ion-title>
+    <ion-title class="title-big">METEO</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="presentPopover($event)">
         <ion-icon slot="icon-only" name="more"></ion-icon>
@@ -9,41 +9,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="data != null">
 
-  <div *ngIf="data != null">
-    <ion-grid class="main">
-      <ion-row>
-        <ion-col size-md="7">
-          
-            <ion-row>
-              <ion-col size="12">
-                <ion-img [src]="data.current_condition.icon_big" class="today-weather-icon"></ion-img>
-              </ion-col>
-              <ion-col size="12" class="ion-text-center">
-                <p class="today-temp">{{ data.current_condition.tmp }}°c</p>
-                <p class="today-minmax">{{ data.fcst_day_0.tmin }}°c / {{ data.fcst_day_0.tmax }}°c</p>
-                <p class="today-condition">{{ data.current_condition.condition }}</p>
-              </ion-col>
-            </ion-row>
+  <ion-grid class="main">
+    <ion-row>
+      <ion-col size-md="7">
+          <ion-row>
+            <ion-col size="12">
+              <ion-img [src]="data.current_condition.icon_big" class="today-weather-icon"></ion-img>
+            </ion-col>
+            <ion-col size="12" class="ion-text-center">
+              <h1 class="today-temp">{{ data.current_condition.tmp }}°</h1>
+              <p class="today-minmax">{{ data.fcst_day_0.tmin }}° / {{ data.fcst_day_0.tmax }}°</p>
+              <p class="today-condition">{{ data.current_condition.condition }}</p>
+            </ion-col>
+          </ion-row>
 
-            <ion-row>
-              <ion-col class="ion-text-center">
-                <ion-title class="location">{{ data.city_info.name }}, {{ data.city_info.country }}</ion-title>
-                <p>{{ data.fcst_day_0.day_long }} {{ data.fcst_day_0.date }}</p>
-              </ion-col>
-            </ion-row>
-          
-        </ion-col>
+          <ion-row>
+            <ion-col size="12" class="ion-text-center">
+              <ion-title class="location">{{ data.city_info.name }}, {{ data.city_info.country }}</ion-title>
+              <p>{{ data.fcst_day_0.day_long }} {{ data.fcst_day_0.date }}</p>
+            </ion-col>
+          </ion-row>
 
-        <ion-col size-md="5" class="ion-align-self-center">
-          <!-- <ion-title class="ion-padding-bottom">Les jours à venir</ion-title> -->
-          <app-forecast-list [data]="data"></app-forecast-list>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+          <app-hourly-weather [data]="data"></app-hourly-weather>
+      </ion-col>
 
-  </div>
+      <ion-col size-md="5" class="ion-align-self-center">
+        <app-forecast-list [data]="data"></app-forecast-list>
+      </ion-col>
+    </ion-row>
+    
+    
+  </ion-grid>
 
 </ion-content>
 

@@ -11,6 +11,7 @@ import { PopoverSettingsComponent } from '../popover-settings/popover-settings.c
 export class HomePage {
 
   public data: any;
+  
   constructor(
     private fetchWeatherSvc: FetchWeatherService,
     public popoverController: PopoverController

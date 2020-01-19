@@ -1,0 +1,22 @@
+ion-slides{
+  background-color: #dadada;
+}
+
+ion-slide {
+  width: 70px!important;
+  height: 120px!important;
+  background-color:  #FFF;
+  float: left;
+  margin: 1.5px!important;
+  padding: 2px!important;
+  border-radius: 5px!important;
+}
+
+ion-slide:hover{
+  cursor: pointer;
+  background-color: #f4f4f4;
+
+}
+
+
+

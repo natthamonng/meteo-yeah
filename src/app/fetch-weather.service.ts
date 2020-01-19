@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IWeatherData, IForecastDayData } from './WeatherData';
+import { IWeatherData } from './WeatherData';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +41,6 @@ export class FetchWeatherService {
       const citiesArray = new Array();
 
       Object.keys(data).forEach(key => {
-        debugger
         citiesArray.push(data[key]);
       });
 

@@ -1,19 +1,16 @@
 :host {
     height: 100vh;
-    // background-color: linear-gradient(rgb(47,150,163), rgb(48,62,143));
 
     .title-big {
         font-weight: bold;
     }
 
     .main {
-        padding: 20px;
-        min-height: calc(100vh - 56px);
-        background: linear-gradient(white, #c2c2c2);
+        padding: 0 1rem;
     }
 
     .today-weather-icon {
-        max-width: 200px;
+        max-width: 180px;
         margin: auto;
     }
     
@@ -28,11 +25,15 @@
         margin: 0;
         padding: 0;
     }
+
+    .today-condition {
+        font-weight: bold;
+    }
        
     .location {
         font-size: 24px;
         font-weight: bold;
-        margin-top: 80px;
+        margin-top: 50px;
     }
 }
 
