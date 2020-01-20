@@ -19,7 +19,7 @@ export class HourlyWeatherComponent implements OnInit {
       console.log(this.data[`fcst_day_${hourData.day}`])
     })
   }
-  
+
   public getNext24Hrs(): any[] {
     const currentHour = new Date().getHours();
 
@@ -36,7 +36,7 @@ export class HourlyWeatherComponent implements OnInit {
           hourNumber,
           dayShort: this.data.fcst_day_0.day_short,
           icon: this.data.fcst_day_0.hourly_data[hourKey].ICON,
-          temp: this.data.fcst_day_0.hourly_data["0H00"].TMP2m
+          temp: this.data.fcst_day_0.hourly_data[hourKey].TMP2m
         });
       }
     })
@@ -53,13 +53,12 @@ export class HourlyWeatherComponent implements OnInit {
           hourNumber,
           dayShort: this.data.fcst_day_1.day_short,
           icon: this.data.fcst_day_1.hourly_data[hourKey].ICON,
-          temp: this.data.fcst_day_1.hourly_data["0H00"].TMP2m
+          temp: this.data.fcst_day_1.hourly_data[hourKey].TMP2m
         });
       }
     });
 
     // console.log(hoursData);
-    
     return hoursData;
   }
 

@@ -13,12 +13,11 @@ export class TemperatureChartComponent implements OnInit {
   @Input()
   public data : IWeatherData;
 
-  public hoursData: Array<string> = ['0H00', '3h00', '6H00', '09h00', '12h00', '15H00','18H00', '21h00'];
-  public tempsData = this.getChartData();
+  public hoursData: Array<string> = ['0H00', '3H00', '6H00', '9H00', '12H00', '15H00','18H00', '21H00'];
+  // public tempsData = this.getChartData();
   
-  public lineChartData: ChartDataSets[] = [
-    { data: [], label: 'Aujourd\'hui' } //[...this.getChartData()]
-  ];
+  public lineChartData: ChartDataSets[] = [];
+
   public lineChartLabels: Label[] = this.hoursData;
   public lineChartOptions: ChartOptions = {
     responsive: true,
@@ -43,11 +42,13 @@ export class TemperatureChartComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.lineChartData = [{ data: [...this.getChartData()], label: 'Aujourd\'hui' }];
+  }
 
   public getChartData(): any[] {
     return this.hoursData.map( hour => {
-      this.data.fcst_day_0.hourly_data[hour].TMP2m;
+      return this.data.fcst_day_0.hourly_data[hour].TMP2m;
     });
   }
 

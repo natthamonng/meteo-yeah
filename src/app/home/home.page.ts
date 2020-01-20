@@ -19,7 +19,8 @@ export class HomePage {
 
   ionViewWillEnter(){
     const currentCity = this.fetchWeatherSvc.getCurrentCity();
-
+    
+    //asynchrone
     this.fetchWeatherSvc.searchWeatherPromise(currentCity)
       .then(data => {
         this.data = data;
