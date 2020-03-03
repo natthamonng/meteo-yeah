@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "meteo-yeah-weather-app": {
+      "hosting": {
+        "app": [
+          "meteo-yeah-weather-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "meteo-yeah-weather-app"
+  }
+}
